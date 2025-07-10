@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1 class="title">MYPHONE</h1>
+    <div id="container"></div>
+
+    <script>
+        const stage = new Konva.Stage({
+          container: 'container',
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+
+        const layer = new Konva.Layer();
+        stage.add(layer);
+
+        const circle = new Konva.Circle({
+          x: stage.width() / 2,
+          y: stage.height() / 2,
+          radius: 70,
+          fill: 'red',
+          stroke: 'black',
+          strokeWidth: 4,
+          draggable: true,
+        });
+
+        circle.on('mouseover', () => {
+          document.body.style.cursor = 'pointer';
+        });
+        circle.on('mouseout', () => {
+          document.body.style.cursor = 'default';
+        });
+
+        layer.add(circle);
+        layer.draw();
+
+        // Для отладки:
+        console.log("Stage size:", stage.width(), stage.height());
+    </script>
+</body>
+</html>
