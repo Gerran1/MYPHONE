@@ -1,1 +1,81 @@
-labyby
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body class="mat" style="background-color: rgb(244, 244, 244)">
+   <div class="mat" >
+       <h1 class="textTitle">MYPHONE</h1>
+   </div>
+    <h1 class="textMain" style="color: #000000; text-align: center">V-0.1 BY ITGR</h1>
+    <div class="mat" style="margin-top: -18px">
+        <p class="textTitle" style="margin-top: 20px">EDITOR</p>
+        <div id="container"></div>
+    </div>
+
+
+    <script>
+        const stage = new Konva.Stage({
+          container: 'container',
+          width: 270,
+          height: 520,
+
+        });
+
+        const layer = new Konva.Layer();
+        stage.add(layer);
+
+        const circle = new Konva.Circle({
+          x: 70,
+          y: 70,
+          radius: 20,
+          fill: '#090909',
+          stroke: 'black',
+          strokeWidth: 1,
+          draggable: true,
+          shadowColor: 'black',
+          shadowBlur: 4,
+          shadowOffset: { x: 0, y: 0 },
+          shadowOpacity: 0.4,
+        });
+
+        const myphone = new Konva.Rect({
+          x: 8,
+          y: 8,
+          width: 250,
+          height: 500,
+          fill: 'gray',
+          cornerRadius: 20,
+          shadowColor: 'black',
+          shadowBlur: 10,
+          shadowOffset: { x: 0, y: 0 },
+          shadowOpacity: 0.4,
+        });
+
+        layer.add(myphone);
+
+        circle.on('mouseover', () => {
+          document.body.style.cursor = 'move';
+        });
+        circle.on('mouseout', () => {
+          document.body.style.cursor = 'default';
+        });
+
+        layer.add(circle);
+        layer.draw();
+
+        // Для отладки:
+        console.log("Stage size:", stage.width(), stage.height());
+    </script>
+</body>
+</html>
+
