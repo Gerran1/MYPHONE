@@ -35,7 +35,7 @@
         font-family: "Handjet", sans-serif;
         font-size: 200%;
         text-align: center;
-        color: rgba(255, 0, 0, 0.15);
+        color: rgba(255, 0, 0, 0.1);
 
         letter-spacing: 20px;
         text-shadow:
@@ -72,7 +72,6 @@
         );
 }
 .flex{
-
         display: flex;
         flex-wrap: nowrap;
 }
@@ -88,8 +87,10 @@
         background-image: url('Images/circle.png');
         border-color: rgba(240, 248, 255, 0);
                 box-shadow:
+              0 0 18px 1px rgba(222, 207, 173, 0.51),
               0 0 7px rgb(255, 0, 0),
               0 0 10px rgb(255, 0, 0, 0.90),
+
               0 0 21px rgb(255, 0, 0, 0.80),
               0 0 42px rgb(255, 0, 0, 0.70),
               0 0 82px rgb(255, 0, 0, 0.60),
@@ -103,6 +104,7 @@
         background-image: url('Images/circle.png');
         border-color: rgba(240, 248, 255, 0);
                 box-shadow:
+              0 0 18px 1px rgba(222, 207, 173, 0.51),
               0 0 7px rgb(255, 79, 0),
               0 0 10px rgb(255, 79, 0, 0.90),
               0 0 21px rgb(255, 79, 0, 0.80),
@@ -118,6 +120,7 @@
         background-image: url('Images/circle.png');
         border-color: rgba(240, 248, 255, 0);
                 box-shadow:
+              0 0 18px 1px rgba(222, 207, 173, 0.51),
               0 0 7px rgb(255, 128, 0),
               0 0 10px rgb(255, 128, 0, 0.90),
               0 0 21px rgb(255, 128, 0, 0.80),
@@ -126,6 +129,36 @@
               0 0 92px rgb(255, 128, 0, 0.50),
               0 0 102px rgb(255, 128, 0, 0.40),
               0 0 151px rgb(255, 128, 0, 0.30);
+}
+.color-btn{
+        padding: 10px 15px;
+        cursor: pointer;
+}
+
+.color-dropdown{
+        display: none;
+        background-color: #f0f0f0;
+}
+
+.color-dropdown a {
+        color: black;
+        padding: 8px 8px;
+        text-decoration: none;
+        display: block;
+}
+
+.color-option{
+        display: flex;
+        align-items: center;
+}
+
+.color-box {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+}
+.show{
+        display: block;
 }
 /*
 .mat:hover {

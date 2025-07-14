@@ -10,38 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/konva@8/konva.min.js"></script>
     <style>
-        .color-btn {
-                padding: 10px 15px;
-                cursor: pointer;
-            }
 
-            .color-dropdown {
-                display: none;
-                background-color: #f0f0f0;
-            }
-
-            .color-dropdown a {
-                color: black;
-                padding: 8px 8px;
-                text-decoration: none;
-                display: block;
-            }
-
-            .color-option {
-                display: flex;
-                align-items: center;
-            }
-
-            .color-box {
-                width: 20px;
-                height: 20px;
-                margin-right: 10px;
-            }
-
-
-            .show {
-                display: block;
-            }
     </style>
 </head>
 <body class="mat" style="background-color: rgb(244, 244, 244)">
@@ -50,72 +19,77 @@
    </div>
     <h1 style="color: #000000; text-align: center; margin-bottom: 20px; font-family: Handjet; font-size: 200%">V-0.1 BY ITGR</h1>
     <div class="mat" style="margin-top: -18px">
-        <p class="textTitle" style="margin-top: 20px">EDITOR</p>
+            <p class="textTitle" style="margin-top: 20px">EDITOR</p>
 
-    <div class="flex">
-      <div id="container"></div>
+        <div class="flex">
+          <div id="container"></div>
+
+            <div style=" margin-left: 30%">
+                    <p class="textMain">Выберите цвет</p>
+                    <button onclick="toggleDropdown()" class="color-btn">∨</button>
+                    <div id="colorDropdown" class="color-dropdown">
+                        <a href="#" onclick="selectColor('Ализариновый', '#e35151')">
+                            <div class="color-option">
+                                <div class="color-box" style="background-color: #e35151;"></div>
+                                <span>Ализариновый</span>
+                            </div>
+                        </a>
+                        <a href="#" onclick="selectColor('Тициановый', '#f0ad2c')">
+                            <div class="color-option">
+                                <div class="color-box" style="background-color: #f0ad2c;"></div>
+                                <span>Тициановый</span>
+                            </div>
+                        </a>
+                        <a href="#" onclick="selectColor('Паракитовый', '#43ce43')">
+                            <div class="color-option">
+                                <div class="color-box" style="background-color: #43ce43;"></div>
+                                <span>Паракитовый</span>
+                            </div>
+                        </a>
+                        <a href="#" onclick="selectColor('Ультрамариновый', '#3737e8')">
+                            <div class="color-option">
+                                <div class="color-box" style="background-color: #3737e8;"></div>
+                                <span>Ультрамариновый</span>
+                            </div>
+                        </a>
+                        <a href="#" onclick="selectColor('Пурпурный', '#9a329a')">
+                            <div class="color-option">
+                                <div class="color-box" style="background-color: #9a329a;"></div>
+                                <span>Пурпурный</span>
+                            </div>
+                        </a>
+                        <a href="#" onclick="selectColor('Gold', '#d4af37')">
+                            <div class="color-option">
+                                <div class="color-box" style="background-color: #d4af37;"></div>
+                                <span>Gold</span>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+
+        </div>
+
+          <div id="flexToggles">
+                <span class="form-check form-switch">
+                  <input class="form-check-input" style="margin-top: 0.8%; margin-right: 1%;" type="radio" id="flexSwitchCheckDefault" name="toggle">
+                  <label class="textMain"  for="flexSwitchCheckDefault">Эконом</label>
+                </span>
+              <div class="form-check form-switch">
+                <input class="form-check-input" style="margin-top: 0.8%; margin-right: 1%;" type="radio" id="flexSwitchCheckDefault2" name="toggle">
+                <label class="textMain" for="flexSwitchCheckDefault">Субфлагман</label>
+              </div>
+               <div class="form-check form-switch">
+                <input class="form-check-input" style="margin-top: 0.8%; margin-right: 1%;" type="radio" id="flexSwitchCheckDefault3" name="toggle">
+                <label class="textMain" for="flexSwitchCheckDefault">Флагман</label>
+              </div>
+
+            </div>
+
+
     </div>
 
-      <div id="flexToggles">
-        <div class="form-check form-switch">
-          <input class="form-check-input" style="margin-top: 0.8%; margin-right: 1%;" type="radio" id="flexSwitchCheckDefault" name="toggle">
-          <label class="textMain"  for="flexSwitchCheckDefault">Эконом</label>
-        </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" style="margin-top: 0.8%; margin-right: 1%;" type="radio" id="flexSwitchCheckDefault2" name="toggle">
-        <label class="textMain" for="flexSwitchCheckDefault">Субфлагман</label>
-      </div>
-       <div class="form-check form-switch">
-        <input class="form-check-input" style="margin-top: 0.8%; margin-right: 1%;" type="radio" id="flexSwitchCheckDefault3" name="toggle">
-        <label class="textMain" for="flexSwitchCheckDefault">Флагман</label>
-      </div>
-
-        </div>
-    </div>
 
 
-<div style="display: inline-block">
-        <p>Выберите цвет: </p>
-        <button onclick="toggleDropdown()" class="color-btn">∨</button>
-        <div id="colorDropdown" class="color-dropdown">
-            <a href="#" onclick="selectColor('Ализариновый', '#e35151')">
-                <div class="color-option">
-                    <div class="color-box" style="background-color: #e35151;"></div>
-                    <span>Ализариновый</span>
-                </div>
-            </a>
-            <a href="#" onclick="selectColor('Тициановый', '#f0ad2c')">
-                <div class="color-option">
-                    <div class="color-box" style="background-color: #f0ad2c;"></div>
-                    <span>Тициановый</span>
-                </div>
-            </a>
-            <a href="#" onclick="selectColor('Паракитовый', '#43ce43')">
-                <div class="color-option">
-                    <div class="color-box" style="background-color: #43ce43;"></div>
-                    <span>Паракитовый</span>
-                </div>
-            </a>
-            <a href="#" onclick="selectColor('Ультрамариновый', '#3737e8')">
-                <div class="color-option">
-                    <div class="color-box" style="background-color: #3737e8;"></div>
-                    <span>Ультрамариновый</span>
-                </div>
-            </a>
-            <a href="#" onclick="selectColor('Пурпурный', '#9a329a')">
-                <div class="color-option">
-                    <div class="color-box" style="background-color: #9a329a;"></div>
-                    <span>Пурпурный</span>
-                </div>
-            </a>
-            <a href="#" onclick="selectColor('Gold', '#d4af37')">
-                <div class="color-option">
-                    <div class="color-box" style="background-color: #d4af37;"></div>
-                    <span>Gold</span>
-                </div>
-            </a>
-        </div>
-    </div>
 
 
 
