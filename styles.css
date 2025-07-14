@@ -97,7 +97,36 @@
               0 0 102px rgb(255, 0, 0, 0.40),
               0 0 151px rgb(255, 0, 0, 0.30);
 }
-
+#flexSwitchCheckDefault2{
+        margin-left: -1%;
+        background-color: rgba(255, 79, 0, 0.71);
+        background-image: url('Images/circle.png');
+        border-color: rgba(240, 248, 255, 0);
+                box-shadow:
+              0 0 7px rgb(255, 79, 0),
+              0 0 10px rgb(255, 79, 0, 0.90),
+              0 0 21px rgb(255, 79, 0, 0.80),
+              0 0 42px rgb(255, 79, 0, 0.70),
+              0 0 82px rgb(255, 79, 0, 0.60),
+              0 0 92px rgb(255, 79, 0, 0.50),
+              0 0 102px rgb(255, 79, 0, 0.40),
+              0 0 151px rgb(255, 79, 0, 0.30);
+}
+#flexSwitchCheckDefault3{
+        margin-left: -1%;
+        background-color: rgba(255, 128, 0, 0.71);
+        background-image: url('Images/circle.png');
+        border-color: rgba(240, 248, 255, 0);
+                box-shadow:
+              0 0 7px rgb(255, 128, 0),
+              0 0 10px rgb(255, 128, 0, 0.90),
+              0 0 21px rgb(255, 128, 0, 0.80),
+              0 0 42px rgb(255, 128, 0, 0.70),
+              0 0 82px rgb(255, 128, 0, 0.60),
+              0 0 92px rgb(255, 128, 0, 0.50),
+              0 0 102px rgb(255, 128, 0, 0.40),
+              0 0 151px rgb(255, 128, 0, 0.30);
+}
 /*
 .mat:hover {
   backdrop-filter: blur(12px);
