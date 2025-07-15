@@ -48,49 +48,45 @@
                         <p class="textMain">Цвет</p>
                         <button onclick="toggleDropdown()" class="color-btn textMain" style="padding-left: 5%; padding-right: 0%; font-size: 150%; margin-left: 42%">V</button>
                         <div id="colorDropdown" class="color-dropdown">
-                            <a href="#" onclick="selectColor('Ализариновый', '#e35151')">
+                            <a href="#" onclick="selectColor('#e35151')">
                                 <div class="color-option">
                                     <div class="color-box" style="background-color: #e35151;"></div>
 
                                 </div>
                             </a>
-                            <a href="#" onclick="selectColor('Тициановый', '#f0ad2c')">
+                            <a href="#" onclick="selectColor('#f0ad2c')">
                                 <div class="color-option">
                                     <div class="color-box" style="background-color: #f0ad2c;"></div>
                                     <span></span>
                                 </div>
                             </a>
-                            <a href="#" onclick="selectColor('Паракитовый', '#43ce43')">
+                            <a href="#" onclick="selectColor('#43ce43')">
                                 <div class="color-option">
                                     <div class="color-box" style="background-color: #43ce43;"></div>
                                     <span></span>
                                 </div>
                             </a>
-                            <a href="#" onclick="selectColor('Ультрамариновый', '#3737e8')">
+                            <a href="#" onclick="selectColor('#3737e8')">
                                 <div class="color-option">
                                     <div class="color-box" style="background-color: #3737e8;"></div>
                                     <span></span>
                                 </div>
                             </a>
-                            <a href="#" onclick="selectColor('Пурпурный', '#9a329a')">
+                            <a href="#" onclick="selectColor('#9a329a')">
                                 <div class="color-option">
                                     <div class="color-box" style="background-color: #9a329a;"></div>
                                     <span></span>
                                 </div>
                             </a>
-                            <a href="#" onclick="selectColor('Gold', '#d4af37')">
+                            <a href="#" onclick="selectColor('color: linear-gradient(60deg, gold, white)')">
                                 <div class="color-option">
-                                    <div class="color-box" style="background-color: #d4af37;"></div>
+                                    <div class="color-box" style="background-color: #d4af37; background: linear-gradient(60deg, gold, white);"></div>
                                     <span></span>
                                 </div>
                             </a>
                         </div>
                 </div>
-
     </div>
-
-
-
 
 
 
@@ -125,7 +121,7 @@
           y: 8,
           width: 250,
           height: 500,
-          fill: 'gray',
+          fill: '#ffffff',
           cornerRadius: 20,
           shadowColor: 'black',
           shadowBlur: 10,
@@ -153,9 +149,9 @@
             document.getElementById("colorDropdown").classList.toggle("show");
         }
 
-        function selectColor(name) {
-            alert(name);
-            document.getElementById("colorDropdown").classList.remove("show");
+        function selectColor(code) {
+            myphone.fill(code);
+            layer.draw();
         }
     </script>
 </body>
