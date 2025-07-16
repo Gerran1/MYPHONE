@@ -216,12 +216,26 @@
         height: 20px;
 
 
-
-
-
 }
 .show{
         display: block;
+}
+#price{
+        margin-top: 26%;
+        margin-left: -11%;
+        font-size: 300%;
+        color: rgba(22, 188, 0, 0.31);
+
+        letter-spacing: 20px;
+        text-shadow:
+              0 0 7px rgb(29, 255, 0),
+              0 0 10px rgb(29, 255, 0, 0.90),
+              0 0 21px rgb(29, 255, 0, 0.80),
+              0 0 42px rgb(29, 255, 0, 0.70),
+              0 0 82px rgb(29, 255, 0, 0.60),
+              0 0 92px rgb(29, 255, 0, 0.50),
+              0 0 102px rgb(29, 255, 0, 0.40),
+              0 0 151px rgb(29, 255, 0, 0.30);
 }
 /*
 .mat:hover {
