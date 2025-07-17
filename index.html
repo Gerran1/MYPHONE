@@ -10,7 +10,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/konva@8/konva.min.js"></script>
     <style>
+        .material-btn {
+            padding: 10px 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
 
+        .material-btn:hover {
+            background-color: #ffffff;
+        }
+
+        .material-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .material-dropdown a {
+            color: black;
+            padding: 10px 12px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .material-dropdown a:hover {
+            background-color: #ffffff;
+        }
+
+        .material-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .show2 {
+            display: block;
+        }
     </style>
 </head>
 <body class="mat" style="background-color: rgb(244, 244, 244)">
@@ -42,6 +78,33 @@
                 <label class="textMain" for="flexSwitchCheckDefault">Флагман</label>
               </div>
             </div>
+
+        <div>
+        <div style=" margin-left: 80%; margin-top: -35%; margin-bottom: 31%;">
+            <button onclick="toggleDropdown2()" class="material-btn">Материал</button>
+            <div id="materialDropdown" class="material-dropdown">
+                <a href="#" onclick="selectMaterial('Металл')">
+                    <div class="material-option">
+                        <div></div>
+                        <span>Металл</span>
+                    </div>
+                </a>
+                <a href="#" onclick="selectMaterial('Стекло')">
+                    <div class="material-option">
+                        <div></div>
+                        <span>Стекло</span>
+                    </div>
+                </a>
+                <a href="#" onclick="selectMaterial('Титан')">
+                    <div class="material-option">
+                        <div></div>
+                        <span>Титан</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
         <div style=" margin-left: 80%; margin-top: -35%; margin-bottom: 31%;">
                         <p class="textMain">Цвет</p>
                         <button onclick="toggleDropdown()" class="color-btn textMain" style="padding-left: 5%; padding-right: 0%; font-size: 150%; margin-left: 42%">V</button>
@@ -190,6 +253,7 @@
 
 
     <script>
+        var isChosen = false;
         var price = 0;
         var priceText = document.getElementById("price");
         priceText.textContent = '$: '+price;
@@ -324,6 +388,58 @@
         function selectColor(code) {
             myphone.fill(code);
             layer.draw();
+        }
+
+
+
+        let counter = 0;
+
+        function toggleDropdown2() {
+            document.getElementById("materialDropdown").classList.toggle("show2");
+        }
+
+        function selectMaterial(name) {
+            switch(name){
+                case 'Металл':
+                    if(isChosen === false){
+                        isChosen = true;
+                        price += 100;
+                        priceText.textContent = '$: '+price;
+                    }
+                    else if(isChosen === true){
+                        isChosen = false;
+                        price -= 100;
+                        priceText.textContent = '$: '+price;
+                    }
+                break;
+                case 'Стекло':
+                    if(isChosen === false){
+                        isChosen = true;
+                        price += 200;
+                        priceText.textContent = '$: '+price;
+                    }
+                    else if(isChosen === true){
+                        isChosen = false;
+                        price -= 200;
+                        priceText.textContent = '$: '+price;
+                    }
+                break;
+                case 'Титан':
+                    if(isChosen === false){
+                        isChosen = true;
+                        price += 300;
+                        priceText.textContent = '$: '+price;
+                    }
+                    else if(isChosen === true){
+                        isChosen = false;
+                        price -= 300;
+                        priceText.textContent = '$: '+price;
+                    }
+                break;
+            }
+
+
+
         }
     </script>
 </body>
